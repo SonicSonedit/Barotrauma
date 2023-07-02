@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Barotrauma 40K - Banshee fix" modversion="1.0.0.3" corepackage="False" steamworkshopid="2975676972" gameversion="1.0.13.2">
+  <Item file="%ModDir%/Items/Jobgear/xenoarmor.xml" />
+</contentpackage>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Talent identifier="macrodosing">
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="1,5" sheetelementsize="128,128" />
+    <Description tag="talentdescription.increaseappliedbuffduration">
+      <Replace tag="[amount]" value="25" color="gui.green" />
+    </Description>
+    <Description tag="talentdescription.poisonsandacidsdealmoredamage">
+      <Replace tag="[amount]" value="10" color="gui.green" />
+    </Description>
+    <Description tag="talentdescription.unlockrecipe">
+      <Replace tag="[itemname]" value="entityname.endocrinebooster" color="gui.orange" />
+    </Description>
+    <Description tag="talentdescription.entitydescription.endocrinebooster" />
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGiveStat stattype="MedicalItemDurationMultiplier" value="0.25" />
+        <CharacterAbilityGiveStat stattype="PoisonMultiplier" value="0.1" />
+        <CharacterAbilityGivePermanentStat statidentifier="medical" stattype="IncreaseFabricationQuality" value="1" />
+      </Abilities>
+    </AbilityGroupEffect>
+    <AddedRecipe itemidentifier="endocrinebooster" />
+  </Talent>
+  <Talent identifier="geneharvester">
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="3,6" sheetelementsize="128,128" />
+    <Description tag="talentdescription.geneharvester">
+      <Replace tag="[probability]" value="25" color="gui.green" />
+    </Description>
+    <AbilityGroupEffect abilityeffecttype="OnRoundEnd">
+      <Abilities>
+        <CharacterAbilityResetPermanentStat statidentifier="geneharvester_*" value="1" setvalue="true" />
+      </Abilities>
+    </AbilityGroupEffect>
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGivePermanentStat statidentifier="blackmarketgenes" stattype="StoreSellMultiplier" value="0.5" targetallies="true" setvalue="true" />
+        <CharacterAbilityGivePermanentStat statidentifier="unidentifiedgeneticmaterial" stattype="StoreSellMultiplier" value="0.5" targetallies="true" setvalue="true" />
+        <CharacterAbilityGivePermanentStat statidentifier="geneticmaterial" stattype="StoreSellMultiplier" value="0.5" targetallies="true" setvalue="true" />
+      </Abilities>
+    </AbilityGroupEffect>
+    <AddedStoreItem itemtag="blackmarketgenes" />
+    <AbilityGroupEffect abilityeffecttype="OnLootCharacter">
+      <Conditions>
+        <AbilityConditionCharacter targettype="Monster">
+          <Conditional maxhealth="gt 25" />
+        </AbilityConditionCharacter>
+        <AbilityConditionCharacterNotLooted identifier="geneharvester" />
+        <AbilityConditionServerRandom randomchance="0.65" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="UseTarget" spawnitemrandomly="true">
+              <SpawnItem identifiers="geneticmaterial_unresearched" spawnposition="ThisInventory" spawnifinventoryfull="true" />
+              <SpawnItem identifiers="geneticmaterial_unresearched" spawnposition="ThisInventory" spawnifinventoryfull="true" />
+              <SpawnItem identifiers="geneticmaterial_unresearched" spawnposition="ThisInventory" spawnifinventoryfull="true" />
+              <SpawnItem identifiers="geneticmaterial_unresearched" spawnposition="ThisInventory" spawnifinventoryfull="true" />
+              <SpawnItem identifiers="adrenaline" spawnposition="ThisInventory" spawnifinventoryfull="true" />
+              <SpawnItem identifiers="adrenaline" spawnposition="ThisInventory" spawnifinventoryfull="true" />
+              <SpawnItem identifiers="adrenaline" spawnposition="ThisInventory" spawnifinventoryfull="true" />
+              <SpawnItem identifiers="adrenaline" spawnposition="ThisInventory" spawnifinventoryfull="true" />
+              <SpawnItem identifiers="biomaterial" spawnposition="ThisInventory" spawnifinventoryfull="true" />
+              <SpawnItem identifiers="hormones" spawnposition="ThisInventory" spawnifinventoryfull="true" />
+              <SpawnItem identifiers="graymatter" spawnposition="ThisInventory" spawnifinventoryfull="true" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+    <AbilityGroupEffect abilityeffecttype="OnLootCharacter">
+      <Conditions>
+        <AbilityConditionCharacter targettype="Monster" />
+        <AbilityConditionCharacterNotLooted identifier="geneharvester" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityMarkAsLooted identifier="geneharvester" />
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+</Override>

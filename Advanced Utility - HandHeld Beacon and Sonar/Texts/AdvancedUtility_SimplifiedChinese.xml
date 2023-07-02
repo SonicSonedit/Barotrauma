@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Simplified Chinese" nowhitespace="false" translatedname="English">
+  <entityname.SonarBeaconLR>远程声纳信标</entityname.SonarBeaconLR>
+  <entitydescription.SonarBeaconLR>产生可被最远 1000 米外的声纳监视器、手持式声纳或导航终端检测到的局部信号。 </entitydescription.SonarBeaconLR>
+  <entityname.SonarBeaconS>安静的声纳信标</entityname.SonarBeaconS>
+  <entitydescription.SonarBeaconS>生成由声纳监视器、手持式声纳和导航终端检测到的固定本地签名。 与普通版本不同，使用不会引起水下生物注意的频率。 电池消耗减少。</entitydescription.SonarBeaconS>
+  <entityname.SonarBeaconLRS>高级声纳信标</entityname.SonarBeaconLRS>
+  <entitydescription.SonarBeaconLRS>产生可被最远 1000 米外的声纳监视器、手持式声纳或导航终端检测到的局部信号。 与普通版本不同，使用不会引起水下生物注意的频率。 电池消耗减少。 </entitydescription.SonarBeaconLRS>
+</infotexts>

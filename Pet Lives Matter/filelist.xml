@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Pet Lives Matter" modversion="1.0.0.5" corepackage="False" steamworkshopid="2978170051" gameversion="1.0.13.2">
+  <Character file="%ModDir%/Balloon/Balloon.xml" />
+  <Character file="%ModDir%/Orangeboy/Orangeboy.xml" />
+  <Character file="%ModDir%/Peanut/Peanut.xml" />
+  <Character file="%ModDir%/Psilotoad/Psilotoad.xml" />
+  <Character file="%ModDir%/Huskcontainer/Huskcontainer.xml" />
+</contentpackage>

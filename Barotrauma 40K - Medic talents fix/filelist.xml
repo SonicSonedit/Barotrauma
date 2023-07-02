@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Barotrauma 40K - Medic talents fix" modversion="1.0.0.1" corepackage="False" steamworkshopid="2976234368" gameversion="1.0.13.2">
+  <Talents file="%ModDir%/Talents/Medic/TalentsDoctorVanilla.xml" />
+</contentpackage>

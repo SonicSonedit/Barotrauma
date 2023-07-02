@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Advanced Utility - HandHeld Beacon and Sonar" modversion="1.0.0.0" corepackage="False" gameversion="1.0.13.2">
+  <Item file="%ModDir%/Items/Beacons.xml" />
+  <Text file="%ModDir%/Texts/AdvancedUtility_English.xml" />
+  <Text file="%ModDir%/Texts/AdvancedUtility_Russian.xml" />
+  <Text file="%ModDir%/Texts/AdvancedUtility_SimplifiedChinese.xml" />
+  <Text file="%ModDir%/Texts/AdvancedUtility_TraditionalChinese.xml" />
+</contentpackage>

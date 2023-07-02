@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Barotrauma 40K - Husk spawn fix" modversion="1.0.0" corepackage="False" steamworkshopid="2987293680" gameversion="1.0.13.2">
+  <Character file="%ModDir%/Characters/CharactersOld/Carrier/Carrier.xml" />
+</contentpackage>

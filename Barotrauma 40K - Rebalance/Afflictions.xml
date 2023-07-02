@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Affliction name="" identifier="warpcorrupt" description="" type="warppsychosis" limbspecific="false" indicatorlimb="Head" activationthreshold="0" showiconthreshold="201" showicontoothersthreshold="20" treatmentthreshold="20" karmachangeonapplied="-1" maxstrength="200" showinhealthscannerthreshold="201" dormantthreshold="30" MedicalSkillGain="0.0">
+    <Description textidentifier="afflictiondescription.warpcorrupt.t1.self" target="Self" minstrength="0" maxstrength="30" />
+    <Description textidentifier="afflictiondescription.warpcorrupt.t2.self" target="Self" minstrength="31" maxstrength="36" />
+    <Description textidentifier="afflictiondescription.warpcorrupt.t3.self" target="Self" minstrength="61" maxstrength="90" />
+    <Description textidentifier="afflictiondescription.warpcorrupt.t4.self" target="Self" minstrength="91" maxstrength="120" />
+    <Description textidentifier="afflictiondescription.warpcorrupt.t5.self" target="Self" minstrength="121" maxstrength="150" />
+    <Description textidentifier="afflictiondescription.warpcorrupt.t5.self" target="Self" minstrength="151" maxstrength="180" />
+    <Description textidentifier="afflictiondescription.warpcorrupt.t6.self" target="Self" minstrength="181" maxstrength="200" />
+    <Effect minstrength="0" maxstrength="30" maxvitalitydecrease="0" strengthchange="-0.0">
+      <PeriodicEffect mininterval="60" maxinterval="200">
+        <StatusEffect target="Character" onlyoutside="true">
+          <Conditional IsLocalPlayer="True" />
+          <Sound file="Content/Characters/Spineling/SPINELING_idle2.ogg" selectionmode="Random" />
+          <Sound file="Content/Characters/Spineling/SPINELING_idle4.ogg" />
+          <Sound file="Content/Characters/Tigerthresher/TIGERTRESHER_idle1.ogg" />
+          <Sound file="Content/Characters/Tigerthresher/TIGERTRESHER_idle2.ogg" />
+          <Sound file="Content/Characters/Tigerthresher/TIGERTRESHER_attack1.ogg" />
+          <Sound file="Content/Characters/Moloch/MOLOCH_attack1.ogg" />
+          <Sound file="Content/Characters/Moloch/MOLOCH_attack2.ogg" />
+          <Sound file="Content/Characters/Husk/HUSK_idle1.ogg" />
+          <Sound file="Content/Characters/Husk/HUSK_idle4.ogg" />
+          <Sound file="Content/Characters/Hammerheadmatriarch/MHAMMERHEAD_idle3.ogg" />
+          <Sound file="Content/Characters/Hammerhead/HAMMERHEAD_idle4.ogg" />
+          <Sound file="Content/Characters/Hammerhead/HAMMERHEAD_attack2.ogg" />
+          <Sound file="Content/Characters/Hammerhead/HAMMERHEAD_attack3.ogg" />
+          <Sound file="Content/Characters/Crawlerhusk/HUSKEDCRAWLER_idle1.ogg" />
+          <Sound file="Content/Characters/Crawlerhusk/HUSKEDCRAWLER_idle3.ogg" />
+          <Sound file="Content/Characters/Crawlerhusk/HUSKEDCRAWLER_attack2.ogg" />
+        </StatusEffect>
+        <StatusEffect target="Character" onlyinside="true">
+          <Conditional IsLocalPlayer="True" />
+          <Sound file="Content/Items/Weapons/honk.ogg" selectionmode="Random" />
+          <Sound file="Content/Items/Weapons/ShotgunShot1.ogg" />
+          <Sound file="Content/Items/Weapons/ShotgunShot2.ogg" />
+          <Sound file="Content/Characters/Moloch/MOLOCH_attack1.ogg" />
+          <Sound file="Content/Characters/Moloch/MOLOCH_attack2.ogg" />
+          <Sound file="Content/Characters/Mudraptor/MUDRAPTOR_attack1.ogg" />
+          <Sound file="Content/Characters/Mudraptor/MUDRAPTOR_attack2.ogg" />
+          <Sound file="Content/Characters/Mudraptor/MUDRAPTOR_idle4.ogg" />
+          <Sound file="Content/Characters/Husk/HUSK_idle1.ogg" />
+          <Sound file="Content/Characters/Husk/HUSK_idle4.ogg" />
+          <Sound file="Content/Characters/Husk/HUSK_attack4.ogg" />
+          <Sound file="Content/Characters/Crawler/CRAWLER_idle3.ogg" />
+          <Sound file="%ModDir%/Items/Weapons/plasmashot1.ogg" />
+          <Sound file="%ModDir%/Items/Weapons/bgshot1.ogg" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="UseTarget">
+          <ReduceAffliction type="faith" strength="2.0" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <!--<StatusEffect target="Character">
+        <ReduceAffliction type="faith" strength="5.0"/>
+      </StatusEffect>-->
+    </Effect>
+    <PeriodicEffect mininterval="100" maxinterval="200">
+      <StatusEffect target="Character" duration="30" onlyinside="true">
+        <Conditional IsLocalPlayer="True" />
+        <Sound file="Content/Items/WarningSiren.ogg" />
+        <Sound file="%ModDir%/Sounds/Corruption/corrupt1.ogg" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <Effect minstrength="31" maxstrength="60">
+      <StatusEffect target="Character" SpeedMultiplier="0.8" setvalue="true">
+        <ReduceAffliction type="damage" strength="0.01" />
+        <ReduceAffliction identifier="burn" strength="0.01" />
+      </StatusEffect>
+      <StatusEffect type="OnSuccess" target="UseTarget">
+        <ReduceAffliction type="faith" strength="4.0" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="61" maxstrength="90" maxvitalitydecrease="2" dialogflag="warpcorrupt">
+      <StatValue stattype="MeleeAttackSpeed" minvalue="0.1" maxvalue="0.1" />
+      <StatValue stattype="MeleeAttackMultiplier" minvalue="0.1" maxvalue="0.1" />
+      <StatusEffect target="Character" SpeedMultiplier="1.1" setvalue="true">
+      </StatusEffect>
+      <StatusEffect type="OnSuccess" target="UseTarget">
+        <ReduceAffliction type="faith" strength="6.0" />
+      </StatusEffect>
+      <StatusEffect target="Character">
+		<Conditional immunity="gte 10" />
+        <ReduceAffliction identifier="immunity" amount="0.33" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="91" maxstrength="120" dialogflag="warpcorrupt">
+      <StatusEffect target="Character" SpeedMultiplier="0.6" setvalue="true">
+        <ReduceAffliction type="damage" strength="0.05" />
+        <ReduceAffliction identifier="burn" strength="0.05" />
+      </StatusEffect>
+      <StatusEffect type="OnSuccess" target="UseTarget">
+        <ReduceAffliction type="faith" strength="8.0" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="121" maxstrength="150" maxvitalitydecrease="6">
+      <StatValue stattype="SkillGainSpeed" minvalue="0.2" maxvalue="0.2" />
+      <StatusEffect target="Character" SpeedMultiplier="1.2" setvalue="true">
+        <Affliction identifier="intoxication" strength="5" probability="0.01" />
+      </StatusEffect>
+      <StatusEffect type="OnSuccess" target="UseTarget">
+        <ReduceAffliction type="faith" strength="10.0" />
+      </StatusEffect>
+      <StatusEffect target="Character">
+		<Conditional immunity="gte 10" />
+        <ReduceAffliction identifier="immunity" amount="0.5" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="151" maxstrength="180" maxvitalitydecrease="10" dialogflag="warpcorrupt">
+      <StatValue stattype="MeleeAttackSpeed" minvalue="0.1" maxvalue="0.1" />
+      <StatValue stattype="MeleeAttackMultiplier" minvalue="0.1" maxvalue="0.1" />
+      <StatValue stattype="RangedAttackSpeed" minvalue="0.1" maxvalue="0.1" />
+      <StatValue stattype="RangedSpreadReduction" minvalue="0.1" maxvalue="0.1" />
+      <StatusEffect target="Character" SpeedMultiplier="0.4" setvalue="true">
+        <ReduceAffliction type="damage" strength="0.1" />
+        <ReduceAffliction identifier="burn" strength="0.1" />
+        <ReduceAffliction identifier="pain" strength="0.1" />
+      </StatusEffect>
+      <StatusEffect type="OnSuccess" target="UseTarget">
+        <ReduceAffliction type="faith" strength="10.0" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="181" maxstrength="200" maxvitalitydecrease="100" dialogflag="warpcorrupt">
+      <StatValue stattype="MeleeAttackSpeed" minvalue="0.1" maxvalue="0.1" />
+      <StatValue stattype="MeleeAttackMultiplier" minvalue="0.1" maxvalue="0.1" />
+      <StatValue stattype="RangedAttackSpeed" minvalue="0.1" maxvalue="0.1" />
+      <StatValue stattype="RangedSpreadReduction" minvalue="0.1" maxvalue="0.1" />
+      <StatValue stattype="SkillGainSpeed" minvalue="0.2" maxvalue="0.2" />
+      <AbilityFlag flagtype="AlwaysStayConscious" />
+      <StatusEffect target="Character" SpeedMultiplier="1.4" setvalue="true">
+      </StatusEffect>
+      <StatusEffect type="OnSuccess" target="UseTarget">
+        <ReduceAffliction type="faith" strength="10.0" />
+      </StatusEffect>
+      <StatusEffect target="Character">
+		<Conditional immunity="gte 10" />
+        <ReduceAffliction identifier="immunity" amount="1.5" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/UI/afflictionicons.png" sheetindex="0,0" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <Affliction identifier="nurglecapself" type="talentbuff" isbuff="true" limbspecific="false" maxstrength="5" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+    <Effect minstrength="0" maxstrength="50" strengthchange="-1" resistancefor="damage,stun" minresistance="0.2" maxresistance="0.2">
+      <StatValue stattype="MeleeAttackMultiplier" minvalue="0.1" maxvalue="0.1" />
+      <StatusEffect target="Character" SpeedMultiplier="0.85" setvalue="true">
+        <ReduceAffliction type="damage" strength="0.05" />
+        <ReduceAffliction type="burn" strength="0.05" />
+        <ReduceAffliction identifier="bloodloss" strength="0.1" />
+        <ReduceAffliction identifier="bleeding" strength="0.1" />
+      </StatusEffect>
+      <StatusEffect target="Character">
+		<Conditional immunity="gte 10" />
+        <ReduceAffliction identifier="immunity" amount="15" />
+      </StatusEffect>
+    </Effect>
+    <Icon texture="%ModDir%/UI/talenticon1.png" sheetindex="6,0" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+  <Affliction identifier="nurglecap" type="talentbuff" isbuff="true" limbspecific="false" maxstrength="5" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+    <Effect minstrength="0" maxstrength="50" strengthchange="-1" resistancefor="damage,stun" minresistance="0.1" maxresistance="0.1">
+      <StatusEffect target="Character" SpeedMultiplier="0.9" setvalue="true">
+        <ReduceAffliction type="damage" strength="0.025" />
+        <ReduceAffliction type="burn" strength="0.025" />
+        <ReduceAffliction identifier="bloodloss" strength="0.05" />
+        <ReduceAffliction identifier="bleeding" strength="0.05" />
+      </StatusEffect>
+      <StatusEffect target="Character">
+		<Conditional immunity="gte 10" />
+        <ReduceAffliction identifier="immunity" amount="2" />
+      </StatusEffect>
+    </Effect>
+    <Icon texture="%ModDir%/UI/talenticon1.png" sheetindex="6,0" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="Paralysis Resistance" identifier="paralysisresistance" description="" type="resistance" isbuff="true" limbspecific="false" karmachangeonapplied="0.15" maxstrength="800" affectmachines="false" MedicalSkillGain="0.0005">
+    <Effect minstrength="0" maxstrength="800" strengthchange="-5" resistancefor="paralysis" minresistance="1" maxresistance="3" />
+    <Effect minstrength="0" maxstrength="800" strengthchange="-5" resistancefor="slowparalysis" minresistance="1" maxresistance="3" />
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="640,896,128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="Immunity" identifier="immunity" description="" type="resistance" isbuff="true" limbspecific="false" maxstrength="700" showiconthreshold="800" showicontoothersthreshold="800"  showinhealthscannerthreshold="0" MedicalSkillGain="0.0" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+    <Effect minstrength="1" maxstrength="100" strengthchange="0.5">
+      <StatusEffect target="Character">
+        <ReduceAffliction identifier="huskinfection" amount="0.1" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="100" maxstrength="300" strengthchange="0.75">
+    </Effect>
+    <Effect minstrength="300" maxstrength="500" strengthchange="0.85">
+      <StatusEffect target="Character">
+        <ReduceAffliction identifier="nurglegiftdebuff" amount="0.1" />
+        <ReduceAffliction identifier="infectedwound" amount="0.1" />
+        <ReduceAffliction identifier="huskinfection" amount="0.1" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="500" maxstrength="600" strengthchange="0.9">
+      <StatusEffect target="Character">
+        <ReduceAffliction identifier="nurglegiftdebuff" amount="0.25" />
+        <ReduceAffliction identifier="honkchosis" amount="0.25" />
+        <ReduceAffliction identifier="huskinfection" amount="0.25" />
+        <ReduceAffliction identifier="infectedwound" amount="0.25" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="600" maxstrength="700" strengthchange="0">
+      <StatusEffect target="Character">
+        <ReduceAffliction identifier="nurglegiftdebuff" amount="0.5" />
+        <ReduceAffliction identifier="honkchosis" amount="0.5" />
+        <ReduceAffliction identifier="huskinfection" amount="0.5" />
+        <ReduceAffliction identifier="infectedwound" amount="0.5" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/TalentsIcons3.png" sheetindex="4,0" sheetelementsize="128,128" color="181,230,29,255" origin="0,0" />
+  </Affliction>
+</Override>

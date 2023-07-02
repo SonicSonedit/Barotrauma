@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="EK  Hardsuits Rebalance" modversion="1.0.5.2" corepackage="False" steamworkshopid="2891358598" gameversion="1.0.8.0" altnames="EK  Hardsuits Rebalance">
+  <Item file="%ModDir%/Items/Jobgear/ek_divinggear.xml" />
+  <Talents file="%ModDir%/Talents/Security/TalentsSecurity.xml" />
+</contentpackage>

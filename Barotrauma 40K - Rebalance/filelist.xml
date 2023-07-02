@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Barotrauma 40K - Rebalance" modversion="1.0.0.11" corepackage="False" steamworkshopid="2976238483" gameversion="1.0.13.2">
+  <Item file="%ModDir%/Items/Genetic/Genetic.xml" />
+  <Item file="%ModDir%/Items/Medicine/Medical.xml" />
+  <Afflictions file="%ModDir%/Afflictions.xml" />
+</contentpackage>

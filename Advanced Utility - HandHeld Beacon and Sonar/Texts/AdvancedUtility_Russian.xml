@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Russian" nowhitespace="false" translatedname="Русский">
+  <entityname.SonarBeaconLR>Сонарный маяк дальнего действия</entityname.SonarBeaconLR>
+  <entitydescription.SonarBeaconLR>Испускает локализованный сигнал, который может быть принят на расстоянии до 1000 метров сонаром, ручным сонаром или навигационным терминалом. </entitydescription.SonarBeaconLR>
+  <entityname.SonarBeaconS>Сонарный маяк беззвучный</entityname.SonarBeaconS>
+  <entitydescription.SonarBeaconS>Испускает локализованный сигнал, который может быть принят сонаром, ручным сонаром или навигационным терминалом. В отличии от конвейрной версии снижен расход заряда батареи а также используется частота, не вызывающая раздражение у обитателей морских глубин.</entitydescription.SonarBeaconS>
+  <entityname.SonarBeaconLRS>Улучшенный сонарный маяк</entityname.SonarBeaconLRS>
+  <entitydescription.SonarBeaconLRS>Испускает локализованный сигнал, который может быть принят на расстоянии до 1000 метров сонаром, ручным сонаром или навигационным терминалом. В отличии от конвейрной версии снижен расход заряда батареи а также используется частота, не вызывающая раздражение у обитателей морских глубин.</entitydescription.SonarBeaconLRS>
+</infotexts>

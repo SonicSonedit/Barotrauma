@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+  <entityname.SonarBeaconLR>Long-Range Sonar Beacon</entityname.SonarBeaconLR>
+  <entitydescription.SonarBeaconLR>Produces a localized signal that can be detected up to 1000 meters by a sonar monitor, handheld sonar, or navigation terminal.</entitydescription.SonarBeaconLR>
+  <entityname.SonarBeaconS>Silent Sonar Beacon</entityname.SonarBeaconS>
+  <entitydescription.SonarBeaconS>Produces a localized signal that can be detected by a sonar monitor, handheld sonar, or navigation terminal. Unlike it's regular version, uses frequency which will not attract attention of underwater creatures. Battery consumption is reduced. </entitydescription.SonarBeaconS>
+  <entityname.SonarBeaconLRS>Advanced Sonar Beacon</entityname.SonarBeaconLRS>
+  <entitydescription.SonarBeaconLRS>Produces a localized signal that can be detected up to 1000 meters by a sonar monitor, handheld sonar, or navigation terminal. Unlike it's regular version, uses frequency which will not attract attention of underwater creatures. Battery consumption is reduced. </entitydescription.SonarBeaconLRS>
+</infotexts>

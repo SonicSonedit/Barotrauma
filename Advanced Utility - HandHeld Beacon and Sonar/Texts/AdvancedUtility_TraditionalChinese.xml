@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Traditional Chinese" nowhitespace="false" translatedname="中文(繁體)">
+  <entityname.SonarBeaconLR>遠程聲納信標</entityname.SonarBeaconLR>
+  <entitydescription.SonarBeaconLR>產生可被最遠 1000 米外的聲納監視器、手持式聲納或導航終端檢測到的局部信號。 </entitydescription.SonarBeaconLR>
+  <entityname.SonarBeaconS>安靜的聲納信標</entityname.SonarBeaconS>
+  <entitydescription.SonarBeaconS>產生一個可由聲納監控器、手持聲納、導航終端檢測到的固定局部信號標識。 與普通版本不同，使用不會引起水下生物注意的頻率。 電池消耗減少。</entitydescription.SonarBeaconS>
+  <entityname.SonarBeaconLRS>高級聲納信標</entityname.SonarBeaconLRS>
+  <entitydescription.SonarBeaconLRS>產生可被最遠 1000 米外的聲納監視器、手持式聲納或導航終端檢測到的局部信號。 與普通版本不同，使用不會引起水下生物注意的頻率。 電池消耗減少。 </entitydescription.SonarBeaconLRS>
+</infotexts>

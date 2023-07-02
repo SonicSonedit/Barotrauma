@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Item name="" identifier="blackcarapase" scale="0.4" category="Equipment" tags="largelitem" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light">
+    <Deconstruct time="10">
+      <RequiredItem identifier="carbon" />
+      <RequiredItem identifier="carbon" />
+      <RequiredItem identifier="slimebacteria" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="genefabricator" requiredtime="60" requiresrecipe="true">
+      <RequiredSkill identifier="medical" level="100" />
+      <RequiredItem identifier="biomaterial" amount="8" />
+      <RequiredItem identifier="adrenaline" amount="8" />
+      <RequiredItem identifier="adamantium" amount="12" />
+      <RequiredItem identifier="hormones" amount="6" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/Genetic/Genetic.png" sourcerect="405,0,90,105" origin="0.5,0.5" />
+    <Sprite name="Carapase" texture="%ModDir%/Items/Genetic/Genetic.png" sourcerect="405,0,90,105" origin="0.5,0.5" />
+    <Body radius="15" width="45" density="30" />
+    <ItemContainer capacity="1" maxstacksize="1" autoinject="true" autoinjectthreshold="Infinity" allowswappingcontaineditems="false">
+      <Containable items="geneticmaterialastartes" />
+      <SubContainer capacity="2" maxstacksize="1" autoinject="true" autoinjectthreshold="Infinity" allowswappingcontaineditems="false">
+        <Containable items="geneticmaterial" />
+      </SubContainer>
+    </ItemContainer>
+    <Wearable limbtype="Torso" slots="Any,HealthInterface" msg="ItemMsgPickUpSelect" displaycontainedstatus="true">
+      <sprite name="Black carapase Wearable" texture="%ModDir%/Items/Genetic/B_Carap_body.png" limb="Torso" hidelimb="false" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="1.0" hideotherwearables="false" sourcerect="188,39,55,80" origin="0.5,0.67" />
+      <StatusEffect tags="spacemarine" type="OnWearing" target="Character" HideFace="true" duration="0.1" stackable="false" />
+    </Wearable>
+  </Item>
+</Override>
