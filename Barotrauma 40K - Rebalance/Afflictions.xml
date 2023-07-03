@@ -1,13 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
-  <Affliction name="" identifier="warpcorrupt" description="" type="warppsychosis" limbspecific="false" indicatorlimb="Head" activationthreshold="0" showiconthreshold="201" showicontoothersthreshold="20" treatmentthreshold="20" karmachangeonapplied="-1" maxstrength="200" showinhealthscannerthreshold="201" dormantthreshold="30" MedicalSkillGain="0.0">
-    <Description textidentifier="afflictiondescription.warpcorrupt.t1.self" target="Self" minstrength="0" maxstrength="30" />
-    <Description textidentifier="afflictiondescription.warpcorrupt.t2.self" target="Self" minstrength="31" maxstrength="36" />
-    <Description textidentifier="afflictiondescription.warpcorrupt.t3.self" target="Self" minstrength="61" maxstrength="90" />
-    <Description textidentifier="afflictiondescription.warpcorrupt.t4.self" target="Self" minstrength="91" maxstrength="120" />
-    <Description textidentifier="afflictiondescription.warpcorrupt.t5.self" target="Self" minstrength="121" maxstrength="150" />
-    <Description textidentifier="afflictiondescription.warpcorrupt.t5.self" target="Self" minstrength="151" maxstrength="180" />
-    <Description textidentifier="afflictiondescription.warpcorrupt.t6.self" target="Self" minstrength="181" maxstrength="200" />
+   <Affliction name="" identifier="warpcorrupt" description="" type="warppsychosis" limbspecific="false" indicatorlimb="Head" activationthreshold="0" showiconthreshold="201" showicontoothersthreshold="20" treatmentthreshold="20" karmachangeonapplied="-1" maxstrength="200" showinhealthscannerthreshold="201" dormantthreshold="30" MedicalSkillGain="0.0" sendmessages="true">
     <Effect minstrength="0" maxstrength="30" maxvitalitydecrease="0" strengthchange="-0.0">
       <PeriodicEffect mininterval="60" maxinterval="200">
         <StatusEffect target="Character" onlyoutside="true">
@@ -50,9 +43,6 @@
           <ReduceAffliction type="faith" strength="2.0" />
         </StatusEffect>
       </PeriodicEffect>
-      <!--<StatusEffect target="Character">
-        <ReduceAffliction type="faith" strength="5.0"/>
-      </StatusEffect>-->
     </Effect>
     <PeriodicEffect mininterval="100" maxinterval="200">
       <StatusEffect target="Character" duration="30" onlyinside="true">
@@ -62,78 +52,170 @@
       </StatusEffect>
     </PeriodicEffect>
     <Effect minstrength="31" maxstrength="60">
-      <StatusEffect target="Character" SpeedMultiplier="0.8" setvalue="true">
-        <ReduceAffliction type="damage" strength="0.01" />
-        <ReduceAffliction identifier="burn" strength="0.01" />
+      <StatusEffect target="Character">
+		<Conditional immunity="gte 10" />
+        <ReduceAffliction identifier="immunity" amount="0.33" />
+      </StatusEffect>
+      <StatusEffect target="Character" SpeedMultiplier="0.8" setvalue="true" comparison="And">
+        <Conditional HasStatusTag="heretic" />
+        <Conditional ishuman="true" />
+        <reduceaffliction type="damage" strength="0.01" />
+        <reduceaffliction identifier="burn" strength="0.01" />
+      </StatusEffect>
+      <StatusEffect target="Character" SpeedMultiplier="0.8" setvalue="true" comparison="And">
+        <Conditional HasStatusTag="!equals heretic" />
+        <Conditional ishuman="true" />
       </StatusEffect>
       <StatusEffect type="OnSuccess" target="UseTarget">
         <ReduceAffliction type="faith" strength="4.0" />
       </StatusEffect>
     </Effect>
-    <Effect minstrength="61" maxstrength="90" maxvitalitydecrease="2" dialogflag="warpcorrupt">
-      <StatValue stattype="MeleeAttackSpeed" minvalue="0.1" maxvalue="0.1" />
-      <StatValue stattype="MeleeAttackMultiplier" minvalue="0.1" maxvalue="0.1" />
-      <StatusEffect target="Character" SpeedMultiplier="1.1" setvalue="true">
-      </StatusEffect>
-      <StatusEffect type="OnSuccess" target="UseTarget">
-        <ReduceAffliction type="faith" strength="6.0" />
-      </StatusEffect>
+    <Effect minstrength="61" maxstrength="90" dialogflag="warpcorrupt">
       <StatusEffect target="Character">
 		<Conditional immunity="gte 10" />
         <ReduceAffliction identifier="immunity" amount="0.33" />
       </StatusEffect>
+      <StatusEffect target="Character" SpeedMultiplier="1.1" setvalue="true" comparison="And">
+        <Conditional HasStatusTag="heretic" />
+        <Conditional ishuman="true" />
+      </StatusEffect>
+      <StatusEffect target="Character" SpeedMultiplier="1.0" setvalue="true" comparison="And">
+        <Conditional HasStatusTag="!equals heretic" />
+        <Conditional ishuman="true" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="And">
+        <Conditional HasStatusTag="!equals heretic" />
+        <Conditional ishuman="true" />
+        <Affliction identifier="warpburn" amount="0.01" />
+      </StatusEffect>
+      <StatusEffect type="OnSuccess" target="UseTarget">
+        <ReduceAffliction type="faith" strength="6.0" />
+      </StatusEffect>
     </Effect>
     <Effect minstrength="91" maxstrength="120" dialogflag="warpcorrupt">
-      <StatusEffect target="Character" SpeedMultiplier="0.6" setvalue="true">
-        <ReduceAffliction type="damage" strength="0.05" />
-        <ReduceAffliction identifier="burn" strength="0.05" />
+      <StatusEffect target="Character">
+		<Conditional immunity="gte 10" />
+        <ReduceAffliction identifier="immunity" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect target="Character" SpeedMultiplier="0.6" setvalue="true" comparison="And">
+        <Conditional HasStatusTag="heretic" />
+        <Conditional ishuman="true" />
+        <reduceaffliction type="damage" strength="0.05" />
+        <reduceaffliction identifier="burn" strength="0.05" />
+      </StatusEffect>
+      <StatusEffect target="Character" SpeedMultiplier="0.6" setvalue="true" comparison="And">
+        <Conditional HasStatusTag="!equals heretic" />
+        <Conditional ishuman="true" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="And">
+        <Conditional HasStatusTag="!equals heretic" />
+        <Conditional ishuman="true" />
+        <Affliction identifier="warpburn" amount="0.05" />
+        <Affliction identifier="intoxication" strength="5" probability="0.01" />
+        <StatValue stattype="SkillGainSpeed" minvalue="-0.2" maxvalue="-0.2" />
       </StatusEffect>
       <StatusEffect type="OnSuccess" target="UseTarget">
         <ReduceAffliction type="faith" strength="8.0" />
       </StatusEffect>
     </Effect>
     <Effect minstrength="121" maxstrength="150" maxvitalitydecrease="6">
-      <StatValue stattype="SkillGainSpeed" minvalue="0.2" maxvalue="0.2" />
-      <StatusEffect target="Character" SpeedMultiplier="1.2" setvalue="true">
+      <StatusEffect target="Character">
+		<Conditional immunity="gte 10" />
+        <ReduceAffliction identifier="immunity" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect target="Character" SpeedMultiplier="1.2" setvalue="true" comparison="And">
+        <Conditional HasStatusTag="heretic" />
+        <Conditional ishuman="true" />
+        <StatValue stattype="SkillGainSpeed" minvalue="0.2" maxvalue="0.2" />
+      </StatusEffect>
+      <StatusEffect target="Character" SpeedMultiplier="0.8" setvalue="true" comparison="And">
+        <Conditional HasStatusTag="!equals heretic" />
+        <Conditional ishuman="true" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="And">
+        <Conditional HasStatusTag="!equals heretic" />
+        <Conditional ishuman="true" />
+        <Affliction identifier="warpburn" amount="0.05" />
+        <Affliction identifier="intoxication" strength="5" probability="0.01" />
+        <StatValue stattype="SkillGainSpeed" minvalue="-0.3" maxvalue="-0.3" />
+        <StatValue stattype="MeleeAttackSpeed" minvalue="-0.1" maxvalue="-0.1" />
+      </StatusEffect>
+      <StatusEffect type="OnSuccess" target="UseTarget">
+        <ReduceAffliction type="faith" strength="10.0" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="151" maxstrength="180" dialogflag="warpcorrupt">
+      <StatusEffect target="Character">
+		<Conditional immunity="gte 10" />
+        <ReduceAffliction identifier="immunity" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect target="Character" SpeedMultiplier="0.4" setvalue="true" comparison="And">
+        <Conditional HasStatusTag="heretic" />
+        <Conditional ishuman="true" />
+        <reduceaffliction type="damage" strength="0.08" />
+        <reduceaffliction identifier="burn" strength="0.08" />
+        <reduceaffliction identifier="pain" strength="0.08" />
+      </StatusEffect>
+      <StatusEffect target="Character" SpeedMultiplier="0.8" setvalue="true" comparison="And">
+        <Conditional HasStatusTag="!equals heretic" />
+        <Conditional ishuman="true" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="And">
+        <Conditional HasStatusTag="!equals heretic" />
+        <Conditional ishuman="true" />
+        <Affliction identifier="warpburn" amount="0.05" />
         <Affliction identifier="intoxication" strength="5" probability="0.01" />
       </StatusEffect>
       <StatusEffect type="OnSuccess" target="UseTarget">
         <ReduceAffliction type="faith" strength="10.0" />
       </StatusEffect>
-      <StatusEffect target="Character">
-		<Conditional immunity="gte 10" />
-        <ReduceAffliction identifier="immunity" amount="0.5" />
-      </StatusEffect>
     </Effect>
-    <Effect minstrength="151" maxstrength="180" maxvitalitydecrease="10" dialogflag="warpcorrupt">
-      <StatValue stattype="MeleeAttackSpeed" minvalue="0.1" maxvalue="0.1" />
-      <StatValue stattype="MeleeAttackMultiplier" minvalue="0.1" maxvalue="0.1" />
-      <StatValue stattype="RangedAttackSpeed" minvalue="0.1" maxvalue="0.1" />
-      <StatValue stattype="RangedSpreadReduction" minvalue="0.1" maxvalue="0.1" />
-      <StatusEffect target="Character" SpeedMultiplier="0.4" setvalue="true">
-        <ReduceAffliction type="damage" strength="0.1" />
-        <ReduceAffliction identifier="burn" strength="0.1" />
-        <ReduceAffliction identifier="pain" strength="0.1" />
-      </StatusEffect>
-      <StatusEffect type="OnSuccess" target="UseTarget">
-        <ReduceAffliction type="faith" strength="10.0" />
-      </StatusEffect>
-    </Effect>
-    <Effect minstrength="181" maxstrength="200" maxvitalitydecrease="100" dialogflag="warpcorrupt">
-      <StatValue stattype="MeleeAttackSpeed" minvalue="0.1" maxvalue="0.1" />
-      <StatValue stattype="MeleeAttackMultiplier" minvalue="0.1" maxvalue="0.1" />
-      <StatValue stattype="RangedAttackSpeed" minvalue="0.1" maxvalue="0.1" />
-      <StatValue stattype="RangedSpreadReduction" minvalue="0.1" maxvalue="0.1" />
-      <StatValue stattype="SkillGainSpeed" minvalue="0.2" maxvalue="0.2" />
-      <AbilityFlag flagtype="AlwaysStayConscious" />
-      <StatusEffect target="Character" SpeedMultiplier="1.4" setvalue="true">
-      </StatusEffect>
-      <StatusEffect type="OnSuccess" target="UseTarget">
-        <ReduceAffliction type="faith" strength="10.0" />
-      </StatusEffect>
+    <Effect minstrength="181" maxstrength="200" dialogflag="warpcorrupt">
       <StatusEffect target="Character">
 		<Conditional immunity="gte 10" />
         <ReduceAffliction identifier="immunity" amount="1.5" />
+      </StatusEffect>
+      <StatusEffect target="Character" SpeedMultiplier="1.4" setvalue="true" comparison="And">
+        <Conditional HasStatusTag="heretic" />
+        <Conditional ishuman="true" />
+        <AbilityFlag flagtype="AlwaysStayConscious" />
+        <reduceaffliction type="damage" strength="0.08" />
+        <reduceaffliction identifier="burn" strength="0.08" />
+        <reduceaffliction identifier="warpburn" strength="0.08" />
+        <reduceaffliction identifier="pain" strength="0.08" />
+      </StatusEffect>
+      <StatusEffect target="Character" SpeedMultiplier="0.6" setvalue="true" comparison="And">
+        <Conditional HasStatusTag="!equals heretic" />
+        <Conditional ishuman="true" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="And">
+        <Conditional HasStatusTag="!equals heretic" />
+        <Conditional ishuman="true" />
+        <Affliction identifier="warpburn" amount="0.1" />
+        <Affliction identifier="intoxication" strength="5" probability="0.01" />
+      </StatusEffect>
+      <StatusEffect type="OnSuccess" target="UseTarget">
+        <ReduceAffliction type="faith" strength="10.0" />
+      </StatusEffect>
+      <StatusEffect target="Character" setvalue="true" comparison="And">
+        <Conditional HasStatusTag="nurglechosen" />
+        <Conditional ishuman="true" />
+        <Affliction identifier="nurglechosen" amount="2.0" />
+      </StatusEffect>
+      <StatusEffect target="Character" setvalue="true" comparison="And">
+        <Conditional HasStatusTag="khornechosen" />
+        <Conditional ishuman="true" />
+        <Affliction identifier="khornechosen" amount="2.0" />
+      </StatusEffect>
+      <StatusEffect target="Character" setvalue="true" comparison="And">
+        <Conditional HasStatusTag="tzeenchchosen" />
+        <Conditional ishuman="true" />
+        <Affliction identifier="tzeenchchosen" amount="2.0" />
+      </StatusEffect>
+      <StatusEffect target="Character" setvalue="true" comparison="And">
+        <Conditional HasStatusTag="slaaneshchchosen" />
+        <Conditional ishuman="true" />
+        <Affliction identifier="slaaneshchchosen" amount="2.0" />
       </StatusEffect>
     </Effect>
     <icon texture="%ModDir%/UI/afflictionicons.png" sheetindex="0,0" sheetelementsize="128,128" origin="0,0" />
